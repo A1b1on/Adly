@@ -13,10 +13,27 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Исходные файлы\gui">
+      <UniqueIdentifier>{64c72a5d-0324-45c7-9444-efa475ac2a00}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="entry.c">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="window_manager.c">
+      <Filter>Исходные файлы\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="main_window_procedure.c">
+      <Filter>Исходные файлы\gui</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="window_manager.h">
+      <Filter>Исходные файлы\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="window_manager_config.h">
+      <Filter>Исходные файлы\gui</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

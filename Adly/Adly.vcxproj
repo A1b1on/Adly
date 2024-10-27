@@ -140,6 +140,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="entry.c" />
+    <ClCompile Include="main_window_procedure.c" />
+    <ClCompile Include="window_manager.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="window_manager.h" />
+    <ClInclude Include="window_manager_config.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
