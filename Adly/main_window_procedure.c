@@ -1,7 +1,10 @@
 #include "window_manager.h"
 
 // Window procedure to handle messages for the main window
-LRESULT CALLBACK main_window_proc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
+LRESULT CALLBACK main_window_proc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+{
+    window_manager_t* wm = window_manager_instance();
+
     switch (uMsg) {
     case WM_COMMAND:
         switch (LOWORD(wParam)) {
@@ -20,11 +23,14 @@ LRESULT CALLBACK main_window_proc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lP
             break;
         }
         break;
+    case WM_SIZE: 
+        RECT rcClient;
+        GetClientRect(hwnd, &rcClient);
 
-    case WM_CREATE:
-
+        wm->resize_callback(rcClient);
         break;
-
+    case WM_CREATE:
+        break;
     case WM_DESTROY:
         PostQuitMessage(0);
         break;

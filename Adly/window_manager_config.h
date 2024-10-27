@@ -25,4 +25,7 @@ LRESULT CALLBACK main_window_proc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lP
 #define ID_TOOLBAR_OPEN 502
 #define ID_TOOLBAR_SAVE 503
 
+#define ID_TEXT_EDITOR 601
+
+
 #endif // WINDOW_MANAGER_CONFIG_H

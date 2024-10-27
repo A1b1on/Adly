@@ -8,6 +8,9 @@ typedef struct {
 
     // Create Main window method
     HRESULT(*create_main_window)(HINSTANCE hInstance);
+
+    // Callbacks
+    void (*resize_callback)(RECT rcClient);
 } window_manager_t;
 
 // Function to access the singleton instance

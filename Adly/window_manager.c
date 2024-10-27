@@ -9,6 +9,10 @@ typedef struct {
     WNDCLASS  window_class;
     HWND      hwnd;
     HINSTANCE hinstance;
+
+    // Elements
+    HWND tool_bar;
+    HWND text_editor;
 } main_window_handler_t;
 
 typedef struct {
@@ -105,6 +109,27 @@ static HWND create_toolbar(HWND hwnd)
     return hToolbar;
 }
 
+static HWND create_text_editor(HWND hwndParent)
+{
+    HWND hTextEditor = CreateWindowEx(
+        0, L"EDIT", NULL,
+        WS_CHILD | WS_VISIBLE | WS_BORDER | ES_LEFT | ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL,
+        10, 50, 400, 300, 
+        hwndParent, (HMENU)ID_TEXT_EDITOR, GetModuleHandle(NULL), NULL);
+
+    if (hTextEditor == NULL) {
+        MessageBox(hwndParent, L"Failed to create text editor.", L"Error", MB_OK | MB_ICONERROR);
+    }
+
+    return hTextEditor;
+}
+
+void resize_callback_impl(RECT rcClient) 
+{
+    // Resize Text editor
+    MoveWindow(WM_PRVT->main_window_handler.text_editor, 10, 50, rcClient.right - 20, rcClient.bottom - 60, TRUE);
+}
+
 static HRESULT create_main_window_impl(HINSTANCE hInstance)
 {
     HRESULT ret = S_OK;
@@ -135,7 +160,8 @@ static HRESULT create_main_window_impl(HINSTANCE hInstance)
     }
 
     create_main_menu(WM_PRVT->main_window_handler.hwnd);
-    create_toolbar(WM_PRVT->main_window_handler.hwnd);
+    WM_PRVT->main_window_handler.tool_bar    = create_toolbar(WM_PRVT->main_window_handler.hwnd);
+    WM_PRVT->main_window_handler.text_editor = create_text_editor(WM_PRVT->main_window_handler.hwnd);
 
     ShowWindow(WM_PRVT->main_window_handler.hwnd, SW_SHOW);
     return S_OK;
@@ -158,6 +184,7 @@ window_manager_t* window_manager_instance(void)
 
         // Set methods
         wm_instance->create_main_window = create_main_window_impl;
+        wm_instance->resize_callback    = resize_callback_impl;
     }
 
     return wm_instance;
