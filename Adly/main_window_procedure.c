@@ -3,18 +3,35 @@
 // Window procedure to handle messages for the main window
 LRESULT CALLBACK main_window_proc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
     switch (uMsg) {
+    case WM_COMMAND:
+        switch (LOWORD(wParam)) {
+        case ID_FILE_NEW:
+        case ID_FILE_OPEN:
+        case ID_FILE_EXIT:
+        case ID_EDIT_UNDO:
+        case ID_EDIT_REDO:
+        case ID_BUILD_COMPILE:
+        case ID_BUILD_RUN:
+        case ID_HELP_ABOUT:
+        case ID_TOOLBAR_NEW:
+        case ID_TOOLBAR_OPEN:
+        case ID_TOOLBAR_SAVE:
+            // Temporary empty
+            break;
+        }
+        break;
+
+    case WM_CREATE:
+
+        break;
+
     case WM_DESTROY:
         PostQuitMessage(0);
-        return 0;
+        break;
 
-    case WM_PAINT: {
-        PAINTSTRUCT ps;
-        HDC hdc = BeginPaint(hwnd, &ps);
-        TextOut(hdc, 10, 10, L"Hello, Singleton Window Manager!", 31);
-        EndPaint(hwnd, &ps);
-        return 0;
-    }
+    default:
+        return DefWindowProc(hwnd, uMsg, wParam, lParam);
     }
 
-    return DefWindowProc(hwnd, uMsg, wParam, lParam);
+    return 0;
 }
