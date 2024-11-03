@@ -140,10 +140,27 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="entry.c" />
+    <ClCompile Include="file_editor.c" />
+    <ClCompile Include="file_manager.c" />
+    <ClCompile Include="main_window.c" />
     <ClCompile Include="main_window_procedure.c" />
+    <ClCompile Include="menu.c" />
+    <ClCompile Include="menu_element.c" />
+    <ClCompile Include="toolbar.c" />
     <ClCompile Include="window_manager.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="file_editor.h" />
+    <ClInclude Include="file_editor_config.h" />
+    <ClInclude Include="file_manager.h" />
+    <ClInclude Include="main_window.h" />
+    <ClInclude Include="main_window_config.h" />
+    <ClInclude Include="menu.h" />
+    <ClInclude Include="menu_config.h" />
+    <ClInclude Include="menu_element.h" />
+    <ClInclude Include="menu_element_config.h" />
+    <ClInclude Include="toolbar.h" />
+    <ClInclude Include="toolbar_config.h" />
     <ClInclude Include="window_manager.h" />
     <ClInclude Include="window_manager_config.h" />
   </ItemGroup>

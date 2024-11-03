@@ -16,6 +16,27 @@
     <Filter Include="Исходные файлы\gui">
       <UniqueIdentifier>{64c72a5d-0324-45c7-9444-efa475ac2a00}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\fs">
+      <UniqueIdentifier>{b8e5cb25-ed63-4540-87f8-499d25f69056}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\gui\widgets">
+      <UniqueIdentifier>{e801a780-75e3-4402-ae39-a43a22b9c56e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\gui\widgets\main_window">
+      <UniqueIdentifier>{1b2238f6-bff3-486b-8a35-4444a4d3d0ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\gui\widgets\menu_element">
+      <UniqueIdentifier>{4bb71bfb-8c24-4d04-801c-ae860954020d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\gui\widgets\menu">
+      <UniqueIdentifier>{fd9d5181-ef5a-4789-838e-789fb9828902}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\gui\widgets\toolbar">
+      <UniqueIdentifier>{82355733-7bfd-4775-a606-cdd57a52872b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\gui\widgets\file_editor">
+      <UniqueIdentifier>{ff5cf8fb-d453-43d6-a526-6c4a41d3f264}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="entry.c">
@@ -24,8 +45,26 @@
     <ClCompile Include="window_manager.c">
       <Filter>Исходные файлы\gui</Filter>
     </ClCompile>
+    <ClCompile Include="file_manager.c">
+      <Filter>Исходные файлы\fs</Filter>
+    </ClCompile>
+    <ClCompile Include="main_window.c">
+      <Filter>Исходные файлы\gui\widgets\main_window</Filter>
+    </ClCompile>
     <ClCompile Include="main_window_procedure.c">
-      <Filter>Исходные файлы\gui</Filter>
+      <Filter>Исходные файлы\gui\widgets\main_window</Filter>
+    </ClCompile>
+    <ClCompile Include="menu_element.c">
+      <Filter>Исходные файлы\gui\widgets\menu_element</Filter>
+    </ClCompile>
+    <ClCompile Include="menu.c">
+      <Filter>Исходные файлы\gui\widgets\menu</Filter>
+    </ClCompile>
+    <ClCompile Include="toolbar.c">
+      <Filter>Исходные файлы\gui\widgets\toolbar</Filter>
+    </ClCompile>
+    <ClCompile Include="file_editor.c">
+      <Filter>Исходные файлы\gui\widgets\file_editor</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -34,6 +73,39 @@
     </ClInclude>
     <ClInclude Include="window_manager_config.h">
       <Filter>Исходные файлы\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="file_manager.h">
+      <Filter>Исходные файлы\fs</Filter>
+    </ClInclude>
+    <ClInclude Include="main_window.h">
+      <Filter>Исходные файлы\gui\widgets\main_window</Filter>
+    </ClInclude>
+    <ClInclude Include="main_window_config.h">
+      <Filter>Исходные файлы\gui\widgets\main_window</Filter>
+    </ClInclude>
+    <ClInclude Include="menu_element.h">
+      <Filter>Исходные файлы\gui\widgets\menu_element</Filter>
+    </ClInclude>
+    <ClInclude Include="menu_element_config.h">
+      <Filter>Исходные файлы\gui\widgets\menu_element</Filter>
+    </ClInclude>
+    <ClInclude Include="menu_config.h">
+      <Filter>Исходные файлы\gui\widgets\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="menu.h">
+      <Filter>Исходные файлы\gui\widgets\menu</Filter>
+    </ClInclude>
+    <ClInclude Include="toolbar_config.h">
+      <Filter>Исходные файлы\gui\widgets\toolbar</Filter>
+    </ClInclude>
+    <ClInclude Include="toolbar.h">
+      <Filter>Исходные файлы\gui\widgets\toolbar</Filter>
+    </ClInclude>
+    <ClInclude Include="file_editor.h">
+      <Filter>Исходные файлы\gui\widgets\file_editor</Filter>
+    </ClInclude>
+    <ClInclude Include="file_editor_config.h">
+      <Filter>Исходные файлы\gui\widgets\file_editor</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
