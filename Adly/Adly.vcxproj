@@ -142,6 +142,7 @@
     <ClCompile Include="entry.c" />
     <ClCompile Include="file_editor.c" />
     <ClCompile Include="file_manager.c" />
+    <ClCompile Include="log_manager.c" />
     <ClCompile Include="main_window.c" />
     <ClCompile Include="main_window_procedure.c" />
     <ClCompile Include="menu.c" />
@@ -153,6 +154,7 @@
     <ClInclude Include="file_editor.h" />
     <ClInclude Include="file_editor_config.h" />
     <ClInclude Include="file_manager.h" />
+    <ClInclude Include="log_manager.h" />
     <ClInclude Include="main_window.h" />
     <ClInclude Include="main_window_config.h" />
     <ClInclude Include="menu.h" />
